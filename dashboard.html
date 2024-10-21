@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Finance Dashboard</title>
+    <link rel="stylesheet" href="dashboard.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+</head>
+<body>
+    <div class="sidebar">
+        <a href="#" class="active"><i class="fas fa-tachometer-alt"></i> Dashboard</a>
+        <a href="#"><i class="fas fa-exchange-alt"></i> Transactions</a>
+        <a href="#"><i class="fas fa-wallet"></i> Budget</a>
+        <a href="report.html"><i class="fas fa-chart-line"></i> Reports</a>
+        <a href="#"><i class="fas fa-cog"></i> Settings</a>
+    </div>
+    <div class="main-content">
+        <div class="header">
+            <h1>Finance Dashboard</h1>
+            <a href="#" class="logout"><i class="fas fa-sync-alt"></i> <i class="fas fa-sign-out-alt"></i> Logout</a>
+        </div>
+        <div class="card">
+            <h2>NET WORTH</h2>
+            <div class="net-worth">35,668 INR</div>
+        </div>
+        <div class="card">
+            <h2>NEW TRANSACTION</h2>
+            <div class="transaction-form">
+                <label>Expense</label>
+                <select>
+                    <option>Food</option>
+                    <option>Transport</option>
+                    <option>Entertainment</option>
+                    <option>Utilities</option>
+                </select>
+                <input type="text" placeholder="Expense Name">
+                <input type="number" placeholder="Amount">
+                <select>
+                    <option>Cash</option>
+                    <option>Credit Card</option>
+                    <option>Debit Card</option>
+                </select>
+                <input type="date" value="2024-01-10">
+                <textarea placeholder="Note"></textarea>
+                <button>Add Expense</button>
+            </div>
+        </div>
+        <div class="card recent-transactions">
+            <h2>RECENT TRANSACTIONS</h2>
+            <table>
+                <tr>
+                    <td>01 May Checking → Visa *2474 credit card payment</td>
+                    <td class="amount-positive">588.20 INR</td>
+                    <td><i class="fas fa-edit edit-icon"></i></td>
+                </tr>
+                <tr>
+                    <td>30 Apr Checking → Savings</td>
+                    <td class="amount-positive">1,000.00 INR</td>
+                    <td><i class="fas fa-edit edit-icon"></i></td>
+                </tr>
+                <tr>
+                    <td>30 Apr Checking → Social security</td>
+                    <td class="amount-negative">-540.00 INR</td>
+                    <td><i class="fas fa-edit edit-icon"></i></td>
+                </tr>
+                <tr>
+                    <td>30 Apr Checking → Income tax</td>
+                    <td class="amount-negative">-940.00 INR</td>
+                    <td><i class="fas fa-edit edit-icon"></i></td>
+                </tr>
+                <tr>
+                    <td>30 Apr Checking → Salary</td>
+                    <td class="amount-positive">6,200.00 INR</td>
+                    <td><i class="fas fa-edit edit-icon"></i></td>
+                </tr>
+            </table>
+        </div>
+    </div>
+    <script src="dashboard.js"></script>
+</body>
+</html>

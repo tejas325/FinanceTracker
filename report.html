@@ -1,0 +1,279 @@
+<!DOCTYPE html> 
+
+<html lang="en"> 
+
+<head> 
+
+    <meta charset="UTF-8"> 
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+
+    <title>Financial Report</title> 
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script> 
+
+    <style> 
+
+        body { 
+
+            font-family: Arial, sans-serif; 
+
+        } 
+
+        h1, h2 { 
+
+            text-align: center; 
+
+            color: #333; 
+
+        } 
+
+        .container { 
+
+            width: 80%; 
+
+            margin: 0 auto; 
+
+        } 
+
+        canvas { 
+
+            margin: 30px 0; 
+
+        } 
+
+        .advice { 
+
+            background-color: #f1f1f1; 
+
+            padding: 20px; 
+
+            border-radius: 5px; 
+
+        } 
+
+    </style> 
+
+</head> 
+
+<body> 
+
+    <div class="container"> 
+
+        <h1>Financial Report Overview</h1> 
+        <!-- Transactions Summary --> 
+
+        <h2>Transactions Summary</h2> 
+
+        <canvas id="transactionChart"></canvas> 
+
+ 
+
+        <!-- Expense Breakdown by Categories --> 
+
+        <h2>Expense Breakdown by Categories</h2> 
+
+        <canvas id="expenseChart"></canvas> 
+
+ 
+
+        <!-- Monthly Expense Trend --> 
+
+        <h2>Monthly Expense Trend</h2> 
+
+        <canvas id="monthlyExpenseChart"></canvas> 
+
+ 
+
+        <!-- Budget Savings Advice --> 
+
+        <h2>Budget Savings Advice</h2> 
+
+        <div class="advice" id="savingsAdvice"> 
+
+            <!-- Advice will be inserted here via JavaScript --> 
+
+        </div> 
+
+    </div> 
+
+ 
+
+    <script> 
+
+        // Mock data - Replace this with dynamic data from your database 
+
+        const transactions = [5000, 3000, 4500, 3200, 2800];  // Sample total transaction amounts per month 
+
+        const expenseCategories = { 
+
+            "Food": 12000, 
+
+            "Transport": 4000, 
+
+            "Entertainment": 3000, 
+
+            "Rent": 15000, 
+
+            "Others": 5000 
+
+        }; 
+
+        const monthlyExpenses = [7000, 8000, 7500, 9000, 8500];  // Sample monthly expense data 
+
+         
+
+        // Transaction Chart (Bar) 
+
+        const transactionCtx = document.getElementById('transactionChart').getContext('2d'); 
+
+        const transactionChart = new Chart(transactionCtx, { 
+
+            type: 'bar', 
+
+            data: { 
+
+                labels: ['January', 'February', 'March', 'April', 'May'], 
+
+                datasets: [{ 
+
+                    label: 'Transactions (in INR)', 
+
+                    data: transactions, 
+
+                    backgroundColor: 'rgba(54, 162, 235, 0.6)', 
+
+                    borderColor: 'rgba(54, 162, 235, 1)', 
+
+                    borderWidth: 1 
+
+                }] 
+
+            }, 
+
+            options: { 
+
+                scales: { 
+
+                    y: { 
+
+                        beginAtZero: true 
+
+                    } 
+
+                } 
+
+            } 
+
+        }); 
+
+ 
+
+        // Expense Breakdown Chart (Pie) 
+
+        const expenseCtx = document.getElementById('expenseChart').getContext('2d'); 
+
+        const expenseChart = new Chart(expenseCtx, { 
+
+            type: 'pie', 
+
+            data: { 
+
+                labels: Object.keys(expenseCategories), 
+
+                datasets: [{ 
+
+                    label: 'Expenses (in INR)', 
+
+                    data: Object.values(expenseCategories), 
+
+                    backgroundColor: [ 
+
+                        'rgba(255, 99, 132, 0.6)', 
+
+                        'rgba(54, 162, 235, 0.6)', 
+
+                        'rgba(255, 206, 86, 0.6)', 
+
+                        'rgba(75, 192, 192, 0.6)', 
+
+                        'rgba(153, 102, 255, 0.6)' 
+
+                    ] 
+
+                }] 
+
+            } 
+
+        }); 
+
+ 
+
+        // Monthly Expense Trend Chart (Line) 
+
+        const monthlyExpenseCtx = document.getElementById('monthlyExpenseChart').getContext('2d'); 
+
+        const monthlyExpenseChart = new Chart(monthlyExpenseCtx, { 
+
+            type: 'line', 
+
+            data: { 
+
+                labels: ['January', 'February', 'March', 'April', 'May'], 
+
+                datasets: [{ 
+
+                    label: 'Monthly Expenses (in INR)', 
+
+                    data: monthlyExpenses, 
+
+                    backgroundColor: 'rgba(75, 192, 192, 0.2)', 
+
+                    borderColor: 'rgba(75, 192, 192, 1)', 
+
+                    borderWidth: 2, 
+
+                    fill: true 
+
+                }] 
+
+            }, 
+
+            options: { 
+
+                scales: { 
+
+                    y: { 
+
+                        beginAtZero: true 
+
+                    } 
+
+                } 
+
+            } 
+
+        }); 
+
+ 
+
+        // Budget Savings Advice 
+
+        const totalExpense = monthlyExpenses.reduce((acc, val) => acc + val, 0); 
+
+        const adviceElement = document.getElementById('savingsAdvice'); 
+
+        if (totalExpense > 40000) {
+    adviceElement.innerHTML = '<p><strong>Advice:</strong> Your total expenses are above the recommended limit. Consider cutting down on unnecessary spending, such as entertainment or dining out, to improve your savings.</p>';
+} else {
+    adviceElement.innerHTML = '<p><strong>Advice:</strong> Your expenses are within the safe limit. Continue monitoring and make small adjustments to increase your savings!</p>';
+}
+
+
+    </script> 
+
+</body> 
+
+</html> 
+
+ 

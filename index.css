@@ -1,0 +1,162 @@
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  /* Navigation Bar */
+  nav {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background-color: #000;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 5px;
+    z-index: 100;
+  }
+  
+  .nav-logo img {
+    width: 100px;
+  }
+  
+  .nav-heading h1 {
+    color: #ecf0f1;
+    font-size: 24px;
+  }
+  
+  .nav-login-register a {
+    color: #ecf0f1;
+    margin-left: 20px;
+    text-decoration: none;
+    font-weight: bold;
+  }
+  
+  /* Split-Screen Layout */
+  .split-screen {
+    display: flex;
+    justify-content: space-between;
+    padding: 100px 50px 50px;
+  }
+  
+  .left-side {
+    width: 50%;
+    background: linear-gradient(to right, #6dd5ed, #2193b0);
+    padding: 50px;
+    color: white;
+    text-align: center;
+  }
+  
+  .left-side img {
+    
+    max-width: 100%;
+    height: auto;
+  }
+  
+  .right-side {
+    width: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .login-form {
+    background: white;
+    padding: 30px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+  }
+  
+  .login-form input {
+    width: 100%;
+    margin-bottom: 15px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+  }
+  
+  .login-form button {
+    width: 100%;
+    padding: 10px;
+    background-color: #2980b9;
+    color: white;
+    border: none;
+    border-radius: 5px;
+  }
+  
+  .login-form a {
+    display: block;
+    text-align: center;
+    margin-top: 10px;
+    color: #2980b9;
+    text-decoration: none;
+  }
+  
+  /* Full-Width Section */
+  #full-width-section {
+    padding: 50px 0;
+    background-color: #f7f7f7;
+  }
+  
+  .image-carousel {
+    position: relative;
+    width: 80%;
+    margin: 0 auto;
+    overflow: hidden;
+  }
+  
+  .carousel-inner {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+  }
+  
+  .carousel-inner img {
+    width: 100%;
+  }
+  
+  .carousel-controls {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    right: 0;
+    display: flex;
+    justify-content: space-between;
+    transform: translateY(-50%);
+  }
+  
+  .carousel-controls button {
+    background-color: rgba(0, 0, 0, 0.5);
+    border: none;
+    color: white;
+    padding: 10px;
+    cursor: pointer;
+    border-radius: 50%;
+  }
+  
+  .carousel-indicators {
+    text-align: center;
+    margin-top: 20px;
+  }
+  
+  .carousel-indicators .indicator {
+    display: inline-block;
+    width: 15px;
+    height: 15px;
+    background-color: #ccc;
+    margin: 0 5px;
+    border-radius: 50%;
+    cursor: pointer;
+  }
+  
+  .indicator.active {
+    background-color: #2980b9;
+  }
+  
+  .textual-description {
+    text-align: center;
+    margin-top: 50px;
+  }
+  
+  /* Footer */
